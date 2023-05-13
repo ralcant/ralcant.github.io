@@ -2,7 +2,8 @@
 let laptop_ip = "localhost";
 
 window.laptop_ip = laptop_ip;
-const SERVER_LINK = `http://${laptop_ip}:5001`;
+// const SERVER_LINK = `http://${laptop_ip}:5001`;
+const SERVER_LINK = "https://doodlebot-386619.ue.r.appspot.com/";
 let socket;
 let room;
 // let is_tutor = false;
