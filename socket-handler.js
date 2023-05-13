@@ -24,8 +24,13 @@ const updateIfTutor = (url) => {
   }
 };
 function setupSocket() {
+  console.log("Trying to connect: " + SERVER_LINK);
   socket = io(SERVER_LINK, { autoConnect: false });
   socket.connect();
+  socket.on("connect", function () {
+    console.log("connected to socket " + SERVER_LINK);
+  });
+
   socket.on("message_received", (message) => {
     console.log("received message");
     console.log(message);
