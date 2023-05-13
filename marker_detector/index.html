@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Aruco camera stream</h2>
+    <video id="videoId" autoplay width="640" height="360"></video>
+    <canvas id="arucoCanvasOutput"></canvas>
+    <button disabled id="activateCameraButton">Activate camera</button>
+    <button disabled id="deactivateCameraButton">Deactivate camera</button>
+  </body>
+  <script async src="opencv_copied.js" id="opencvjs"></script>
+  <script src="constants.js"></script>
+  <script src="camera-controller.js"></script>
+  <script src="index.js"></script>
+
+  <!-- <script type="text/javascript">
+    // schedule first one.
+    setTimeout(processVideo, 0);
+  </script> -->
+</html>

@@ -1,0 +1,261 @@
+/* #outer-dropzone {
+  height: 500px;
+  width: 500px;
+} */
+
+/* #inner-dropzone {
+  height: 80px;
+} */
+
+.dropzone {
+  /* background-color: #bfe4ff; */
+  border: dashed 4px transparent;
+  border-radius: 4px;
+  /* margin: 10px auto 30px; */
+  /* padding: 10px; */
+  /* width: 80%; */
+  opacity: 1;
+}
+
+/* .drop-active {
+  opacity: 0.5;
+  transition: opacity 1s;
+} */
+
+.drop-target {
+  opacity: 0.7;
+  border-color: yellow;
+  border-style: solid;
+}
+
+.drag-drop {
+  display: inline-block;
+  width: 100px;
+  height: 200px;
+  min-width: 40px;
+  /* padding: 2em 0.5em;
+  margin: 1rem 0 0 1rem; */
+
+  color: #fff;
+  background-color: #29e;
+  border: solid 2px #fff;
+
+  touch-action: none;
+  transform: translate(0px, 0px);
+
+  transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+  color: #000;
+  background-color: #4e4;
+}
+.resize-drag {
+  width: 120px;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 1rem;
+  background-color: #29e;
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+
+  touch-action: none;
+
+  /* This makes things *much* easier */
+  box-sizing: border-box;
+}
+
+#gridContainer {
+  position: relative;
+  object-fit: scale-down;
+}
+#canvasContainer {
+  position: relative;
+  object-fit: scale-down;
+}
+/* for bots*/
+.grid-row {
+  display: flex;
+}
+
+.grid-column {
+  display: flex;
+  /* height: 60px; */
+  /* width: 60px; */
+  /* background-color: rgb(88, 84, 84); */
+  /* margin: 10px; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 0.01px dashed white;
+}
+.grid-column.hide-grid {
+  border: 0;
+}
+
+.cell-row-text,
+.cell-column-text {
+  /* margin: 10px; */
+  display: flex;
+  /* height: 60px; */
+  /* width: 60px; */
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.bot-container {
+  position: absolute;
+  /* border: 2px solid green; */
+}
+.bot-image {
+  object-fit: scale-down;
+}
+.obstacle-container {
+  position: absolute;
+  /* border: 2px solid red; */
+}
+.obstacle-image {
+  object-fit: scale-down;
+}
+.coin-container {
+  position: absolute;
+  /* border: 2px solid yellow; */
+}
+.coin-image {
+  object-fit: scale-down;
+}
+
+.rotation-handle {
+  padding: 3px 4px;
+  display: table;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -30px;
+  background-color: #ff1661;
+  border-radius: 10rem;
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  cursor: move;
+}
+.rotation-handle:hover {
+  cursor: pointer;
+}
+
+.delete-icon {
+  padding: 4px 4px;
+  /* margin: 5px 5px; */
+  display: table;
+  position: absolute;
+  right: -10%;
+  top: -10%;
+  /* top: 30px; */
+  background-color: #f8004f;
+  border-radius: 10rem;
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+  /* color: #fff; */
+  cursor: move;
+}
+.delete-icon:hover {
+  cursor: pointer;
+}
+
+#changeMovingBotsButton {
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+}
+#loadBotButton {
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: purple;
+}
+#loadBotButton[disabled] {
+  opacity: 0.5;
+}
+
+body:not([needs-loading]) #loadBotButton {
+  display: none;
+}
+.bot-start {
+  background-color: green;
+}
+
+.bot-stop {
+  background-color: red;
+}
+
+.template {
+  position: relative;
+  margin: 0;
+  object-fit: contain;
+  /* margin: 0px;
+  width: 100%;
+  height: 100%; */
+  /* flex: 1; */
+}
+body[current-mode="virtual"]:not([is-moving]) .template:hover {
+  cursor: grab;
+}
+body[current-mode="virtual"][is-moving] .template:hover {
+  cursor: not-allowed;
+}
+body[current-mode="virtual"]:not([is-moving]) .grab:hover {
+  cursor: grab;
+}
+body[current-mode="virtual"][is-moving] .grab:hover {
+  cursor: not-allowed;
+}
+body[current-mode="virtual"]:not([is-moving]) .grabbing:hover {
+  cursor: grabbing;
+}
+body[current-mode="virtual"][is-moving] .grabbing:hover {
+  cursor: not-allowed;
+}
+body[current-mode="camera"] #objects-inner {
+  opacity: 0.5;
+}
+body[is-moving="true"] .edit-icon {
+  display: none;
+}
+
+body[is-moving] .final-grid:not(.drop-target) {
+  border: 2px solid red;
+}
+body:not([is-moving]) .final-grid:not(.drop-target) {
+  border: 2px solid rgb(1, 253, 1);
+}
+/* .template img {
+  width: 100%;
+  height: 100%;
+} */
+/*Used to have the divs be on the same place*/
+#waitingRoom {
+  /* position: absolute;
+  display: "flex";
+  flex-direction: row; */
+}
+#bots,
+#obstacles,
+#coins {
+  /* max-height: 90px; */
+  /* max-width: 500px; */
+  /* height: 90px; */
+  /* width: 500px; */
+  /* display: "flex"; */
+  /* flex-direction: column; */
+  /* flex: 1; */
+}
