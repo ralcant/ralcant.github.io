@@ -259,6 +259,6 @@ body[tutorial] #scoreModalClose {
   display: none;
 }
 
-body:not([tutorial]) #showVideosModalButton {
+body[tutorial] #showVideosModalButton {
   display: none;
 }
