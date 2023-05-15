@@ -26,7 +26,7 @@
       }
 
       .btn,
-      h3 {
+      h1 {
         color: whitesmoke;
       }
     </style>
@@ -50,11 +50,11 @@
                         "https://www.youtube.com/embed/my_id_here"
                 
                 -->
-          <h3>Tutorial 4 page</h3>
+          <h1>Tutorial 1 page</h1>
           <iframe
             width="1100"
             height="500"
-            src="https://www.youtube.com/embed/ZwH4szb7Ofk"
+            src="https://www.youtube.com/embed/tJJKLcx2XaE "
             allow="fullscreen;"
             allowfullscreen
           >
@@ -63,13 +63,13 @@
 
           <!-- Button trigger modal -->
           <button
-            onclick="finishTutorial4()"
+            onclick="finishTutorial1()"
             type="button"
             class="btn btn-lg btn-success"
             data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
           >
-            Continue to Game 4
+            Continue to Game 1
           </button>
         </center>
         <!--taz modal-->
@@ -87,12 +87,12 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h4 class="modal-title" id="staticBackdropLabel">
-                  Continue to Game 4
+                  Continue to Game 1
                 </h4>
               </div>
               <div class="modal-body">
                 <h5>
-                  Please wait while other players finish watching tutorial 4
+                  Please wait while other players finish watching tutorial 1
                 </h5>
                 <br />
                 <div
@@ -126,9 +126,12 @@
       var urlParams = new URLSearchParams(window.location.search);
       roomId = urlParams.get("room");
       console.log(roomId);
+      // document.addEventListener("DOMContentLoaded", () =>
+      //   live_updates.join_room_page(roomId)
+      // );
 
-      function finishTutorial4() {
-        live_updates.finish_page({ roomId, page: "tutorial4" });
+      function finishTutorial1() {
+        live_updates.finish_page({ roomId, page: "tutorial1" });
       }
     </script>
   </body>
