@@ -130,7 +130,7 @@ window.COIN_IMAGES = COIN_IMAGES;
 const ALL_ASSETS = {
   ///////////////////////None theme//////////////////////
   doodlebot_alone: {
-    image: ASSETS_FOLDER + "None_DoodleBot.png",
+    image: ASSETS_FOLDER + "None_Doodlebot.png",
     width: 3, //1.9,
     height: 3, //1.7,
     type: BOT_TYPE,
@@ -138,7 +138,7 @@ const ALL_ASSETS = {
     theme: "None",
   },
   doodlebot_cowboy: {
-    image: ASSETS_FOLDER + "None_DoodleBot_Cowboy.png",
+    image: ASSETS_FOLDER + "None_Doodlebot_Cowboy.png",
     width: 3, //1.9,
     height: 3, //1.7,
     type: BOT_TYPE,
@@ -767,7 +767,7 @@ const TEMPLATE_GRIDS = {
           angle: 0,
           height: 3,
           width: 1,
-          image: "../assets/None_DoodleBot.png",
+          image: "../assets/None_Doodlebot.png",
           movement_type: MOVEMENT_VALUES.RANDOM.value,
           policies: [BOT_POLICIES.COLLECT.value],
           real_bottom_left: [2, 12],
@@ -778,7 +778,7 @@ const TEMPLATE_GRIDS = {
           angle: 0,
           height: 3,
           width: 1,
-          image: "../assets/None_DoodleBot.png",
+          image: "../assets/None_Doodlebot.png",
           movement_type: MOVEMENT_VALUES.RANDOM.value,
           policies: [BOT_POLICIES.COLLECT.value],
           real_bottom_left: [2, 12],
