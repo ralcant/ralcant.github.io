@@ -258,3 +258,7 @@ body:not([tutorial]) #continueToNextPage {
 body[tutorial] #scoreModalClose {
   display: none;
 }
+
+body:not([tutorial]) #showVideosModalButton {
+  display: none;
+}
