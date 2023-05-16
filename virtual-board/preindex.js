@@ -17,7 +17,9 @@ for (let i = 0; i < themes.length; i++) {
       const value = this.value;
       if (value == "None") {
         virtualMode.setAttribute("name", "None");
-        realVideoStream.setAttribute("name", "None");
+        if (realVideoStream) {
+          realVideoStream.setAttribute("name", "None");
+        }
         body.className =
           "background1 d-flex justify-content-center align-items-center vh-100";
         for (var i = 0; i < heading2.length; i++) {
@@ -30,10 +32,12 @@ for (let i = 0; i < themes.length; i++) {
           heading4[i].style.color = "antiquewhite";
         }
         console.log(virtualMode.getAttribute("name"));
-        console.log(realVideoStream.getAttribute("name"));
+        // console.log(realVideoStream.getAttribute("name"));
       } else if (value == "City") {
         virtualMode.setAttribute("name", "City");
-        realVideoStream.setAttribute("name", "City");
+        if (realVideoStream) {
+          realVideoStream.setAttribute("name", "City");
+        }
         body.className =
           "background2 d-flex justify-content-center align-items-center vh-100";
         for (var i = 0; i < heading2.length; i++) {
@@ -46,10 +50,12 @@ for (let i = 0; i < themes.length; i++) {
           heading4[i].style.color = "antiquewhite";
         }
         console.log(virtualMode.getAttribute("name"));
-        console.log(realVideoStream.getAttribute("name"));
+        // console.log(realVideoStream.getAttribute("name"));
       } else if (value == "School") {
         virtualMode.setAttribute("name", "School");
-        realVideoStream.setAttribute("name", "School");
+        if (realVideoStream) {
+          realVideoStream.setAttribute("name", "School");
+        }
         body.className =
           "background4 d-flex justify-content-center align-items-center vh-100";
         for (var i = 0; i < heading2.length; i++) {
@@ -62,10 +68,12 @@ for (let i = 0; i < themes.length; i++) {
           heading4[i].style.color = "black";
         }
         console.log(virtualMode.getAttribute("name"));
-        console.log(realVideoStream.getAttribute("name"));
+        // console.log(realVideoStream.getAttribute("name"));
       } else if (value == "Pacman") {
         virtualMode.setAttribute("name", "Pacman");
-        realVideoStream.setAttribute("name", "Pacman");
+        if (realVideoStream) {
+          realVideoStream.setAttribute("name", "Pacman");
+        }
         body.className =
           "background3 d-flex justify-content-center align-items-center vh-100";
         for (var i = 0; i < heading2.length; i++) {
@@ -78,14 +86,16 @@ for (let i = 0; i < themes.length; i++) {
           heading4[i].style.color = "antiquewhite";
         }
         console.log(virtualMode.getAttribute("name"));
-        console.log(realVideoStream.getAttribute("name"));
+        // console.log(realVideoStream.getAttribute("name"));
       } else {
         virtualMode.setAttribute("name", "None");
-        realVideoStream.setAttribute("name", "None");
+        if (realVideoStream) {
+          realVideoStream.setAttribute("name", "None");
+        }
         body.className =
           "background1 d-flex justify-content-center align-items-center vh-100";
         console.log(virtualMode.getAttribute("name"));
-        console.log(realVideoStream.getAttribute("name"));
+        // console.log(realVideoStream.getAttribute("name"));
       }
     }
   });
